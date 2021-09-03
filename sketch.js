@@ -81,7 +81,7 @@ function setup()
    button2 = createImg('cut_btn.png');
    button2.position(250,280);
    button2.size(60,60);
-   button2.mouseClicked(drop2);
+  
 
    shelf = new Ground(390,180,120,12);
 
@@ -159,7 +159,7 @@ function draw()
        engine.world.gravity.y = -1;
        bub.body.position.x = fruit.body.position.x;
        bub.body.position.y = fruit.body.position.y;
-       up();
+       
     }
    
 }
@@ -172,21 +172,7 @@ function drop()
   fruit_con = null; 
 }
 
-function drop2()
-{
-  cut_sound.play();
-  rope2.break();
-  fruit_con_2.detach();
-  fruit_con_2 = null;
-}
 
-function drop3()
-{
-  cut_sound.play();
-  rope3.break();
-  fruit_con_3.detach();
-  fruit_con_3 = null;
-}
 
 
 function collide(body,sprite,dis)
@@ -218,13 +204,12 @@ function mute()
      }
 }
 
-function up (){
-  Matter.Body.applyForce(fruit,{ x : 0 , y : 0 } , { x : 0 , y : -0.05})
-}
 
 function remove_rope() {
-   rope.break();
-    con.dettach();
-     con = null; }
+  cut_sound.play();
+  rope2.break();
+  fruit_con_2.detach();
+  fruit_con_2 = null;
+}
 
 
