@@ -157,8 +157,8 @@ function draw()
    if(collide(fruit,bub,40) == true)
     {
        engine.world.gravity.y = -1;
-       bub.body.position.x = fruit.body.position.x;
-       bub.body.position.y = fruit.body.position.y;
+      bub.position.x = fruit.position.x;
+       bub.position.y = fruit.position.y;
        
     }
    
